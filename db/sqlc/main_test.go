@@ -17,9 +17,7 @@ var testQueries *Queries
 var testDB *pgxpool.Pool
 
 func TestMain(m *testing.M) {
-	ctx := context.Background()
-
-	conn, err := pgxpool.New(ctx, dbSource)
+	conn, err := pgxpool.New(context.Background(), dbSource)
 	if err != nil {
 		log.Fatal("can not connect to db:", err)
 	}
